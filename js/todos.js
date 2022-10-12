@@ -3,6 +3,7 @@ const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.querySelector("#todo-list");
 
 let toDos = [];
+let toDate = [];
 
 function saveTodos() {
     localStorage.setItem("todos", JSON.stringify(toDos));
@@ -14,16 +15,18 @@ function deleteToDo(event) {
     toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
     saveTodos();
 }
-
 function printToDo(newTodo) {
     const li = document.createElement("li");
     li.id = newTodo.id
     const span = document.createElement("span");
     span.innerText = newTodo.text;
+    const date = document.createElement("ol");
+    date.innerText = newTodo.data;
     const button = document.createElement("button");
     button.innerText = "X";
     button.addEventListener("click", deleteToDo);
     li.appendChild(span);
+    li.appendChild(date);
     li.appendChild(button);
     toDoList.appendChild(li);
 }
@@ -35,6 +38,7 @@ function handleTodoSubmit(event) {
     const newTodoObj = {
         text: newTodo,
         id: Date.now(),
+        data: new Date().toLocaleString(),
     }
     toDos.push(newTodoObj);
     printToDo(newTodoObj);
