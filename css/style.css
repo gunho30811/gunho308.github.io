@@ -15,7 +15,7 @@ h2,h1{
 /*****back ground******/
 #background{
     z-index: -1;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     position: absolute;
     overflow: hidden;
@@ -73,6 +73,7 @@ h2,h1{
 }
 
 #greeting{
+    font-size:1.5em;
     font-family: "NanumSquare","맑은 고딕", sans-serif;
     text-align: center;
     padding-top: 30px;
@@ -81,7 +82,7 @@ h2,h1{
 /******main********/
 
 .main{
-    width: 1000px;
+    width: 65vw;
     height: 80vh;
     display: flex;
     margin: auto 10px;
@@ -104,7 +105,7 @@ h2,h1{
     text-align: center;
 }
 .left #clock{
-    font-size: 60px;
+    font-size: 2em;
     margin:auto;
 }
 .left #weather{
@@ -112,13 +113,14 @@ h2,h1{
     display: grid;
 }
 .left #weather span:first-child{
-    font-size: 40px;
+    font-size: 3vw;
 }
 .left #weather span:last-child{
-    font-size: 25px;
+    font-size: 2vw;
 }
 .날씨{
-    width: 200px;
+    width: 20vw;
+    height: 20vh;
     margin: auto;
 }
 .right{
@@ -146,8 +148,7 @@ h2,h1{
 }
 
 .right #todo-form .input{
-    width: 95%;
-    height: 70px;
+    height: 8vh;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
     margin: auto;
